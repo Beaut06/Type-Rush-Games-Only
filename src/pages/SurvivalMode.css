@@ -1,0 +1,631 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.survival-page {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 24px clamp(14px, 4vw, 48px) 35px;
+  color: #f7f9ff;
+  font-family: 'Poppins', sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, #164eb8 0%, transparent 48%),
+    radial-gradient(ellipse at 10% 65%, #54216f 0%, transparent 36%),
+    radial-gradient(ellipse at 90% 70%, #123e9a 0%, transparent 35%),
+    linear-gradient(145deg, #050e2e, #071b50 55%, #180b40);
+}
+
+.survival-page * {
+  box-sizing: border-box;
+}
+
+.survival-sky {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 12% 25%, #448bff22, transparent 20%),
+    radial-gradient(circle at 88% 28%, #bd55ff20, transparent 23%);
+}
+
+.survival-cloud {
+  position: absolute;
+  top: -100px;
+  width: 360px;
+  height: 210px;
+  border-radius: 50%;
+  opacity: .45;
+  filter: blur(32px);
+  background: radial-gradient(ellipse, #594cff, #1c7dff 50%, transparent 72%);
+}
+
+.survival-cloud-left { left: -130px; }
+
+.survival-cloud-right {
+  right: -130px;
+  background: radial-gradient(ellipse, #a54dff, #216fff 55%, transparent 72%);
+}
+
+.survival-stars {
+  position: absolute;
+  inset: 0;
+  opacity: .25;
+  background-image: radial-gradient(#a3eaff 1px, transparent 1.5px);
+  background-size: 73px 91px;
+}
+
+.survival-floating {
+  position: absolute;
+  color: #59caff;
+  opacity: .45;
+  font-weight: 700;
+  font-size: clamp(17px, 2vw, 27px);
+  transform: rotate(-12deg);
+  text-shadow: 0 0 18px #27bfff;
+}
+
+.sf-one { top: 21%; left: 5%; }
+.sf-two { top: 31%; left: 15%; color: #b69bff; }
+.sf-three { top: 24%; right: 9%; }
+.sf-four { top: 33%; right: 4%; color: #ff8eaa; }
+
+.survival-header {
+  max-width: 1240px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.survival-back {
+  padding: 10px 18px;
+  color: white;
+  border: 1px solid #4b9dff;
+  border-radius: 999px;
+  background: #071942d9;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 18px #168bff22;
+}
+
+.survival-back:hover { background: #103c7d; }
+
+.survival-brand {
+  color: #4cddff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.survival-intro {
+  max-width: 950px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.survival-hero-icon {
+  font-size: 38px;
+  filter: drop-shadow(0 0 15px #1dcfff);
+}
+
+.survival-eyebrow {
+  margin: 5px 0;
+  color: #55dcff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.survival-intro h1 {
+  margin: 0;
+  color: #f9fcff;
+  font-size: clamp(36px, 5.5vw, 65px);
+  font-weight: 800;
+  letter-spacing: -2.5px;
+  line-height: 1.13;
+  text-shadow: 0 0 24px #35cfff55;
+}
+
+.survival-intro h1 span {
+  color: #25d9ff;
+  text-shadow: 0 0 26px #20cfff99;
+}
+
+.survival-subtitle {
+  margin: 9px auto 0;
+  color: #c6ddff;
+  font-size: 14px;
+}
+
+.survival-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 950px;
+  margin: 0 auto 15px;
+}
+
+.survival-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 15px;
+  border: 1px solid #6baeff38;
+  border-radius: 14px;
+  background: #06183dbf;
+  backdrop-filter: blur(12px);
+}
+
+.survival-stat span {
+  color: #b6d2ff;
+  font-size: 12px;
+}
+
+.survival-stat strong {
+  color: #44dcff;
+  font-size: 17px;
+}
+
+.survival-stat .time-warning {
+  color: #ff668f;
+  animation: survival-pulse .7s infinite alternate;
+}
+
+.survival-progress {
+  width: min(100%, 950px);
+  height: 7px;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #9abaff25;
+}
+
+.survival-progress > div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #32e9bd, #25caff, #7770ff);
+  box-shadow: 0 0 16px #25caff99;
+  transition: width .3s linear;
+}
+
+.survival-progress > div.progress-danger {
+  background: linear-gradient(90deg, #ff9b61, #ff477e);
+  box-shadow: 0 0 18px #ff477e99;
+}
+
+.survival-arena {
+  position: relative;
+  max-width: 1240px;
+  min-height: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #55b9ff66;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 100%, #246aff35, transparent 55%),
+    linear-gradient(180deg, #04143a9c, #08164180);
+  box-shadow: 0 20px 70px #00000030, inset 0 0 40px #268fff12;
+}
+
+.survival-fire {
+  position: absolute;
+  top: 25px;
+  z-index: 1;
+  font-size: 28px;
+  opacity: .65;
+  filter: drop-shadow(0 0 12px #ff813a);
+  animation: survival-float 2.5s ease-in-out infinite alternate;
+}
+
+.survival-fire-left { left: 25px; }
+
+.survival-fire-right {
+  right: 25px;
+  animation-delay: .6s;
+}
+
+.survival-orb {
+  position: absolute;
+  top: 90px;
+  right: 8%;
+  color: #7ceaff;
+  font-size: 25px;
+  opacity: .45;
+  filter: drop-shadow(0 0 15px #25d9ff);
+  animation: survival-float 3s ease-in-out infinite alternate;
+}
+
+.survival-rain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .3;
+  background-image:
+    linear-gradient(165deg, transparent 48%, #40cfff 49%, transparent 51%),
+    linear-gradient(165deg, transparent 48%, #a77bff 49%, transparent 51%);
+  background-size: 115px 180px, 190px 230px;
+  animation: survival-rain-fall 2.5s linear infinite;
+}
+
+@keyframes survival-rain-fall {
+  from { background-position: 0 0, 20px 0; }
+  to { background-position: 0 180px, 20px 230px; }
+}
+
+@keyframes survival-float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+@keyframes survival-pulse {
+  from { opacity: 1; }
+  to { opacity: .55; }
+}
+
+/* Difficulty selection screen */
+.survival-overlay {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 25px;
+  overflow-y: auto;
+  background: #030c2bbd;
+  backdrop-filter: blur(9px);
+}
+
+.survival-menu {
+  width: min(100%, 1040px);
+  margin: auto;
+  text-align: center;
+}
+
+.survival-menu-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 9px;
+  border: 1px solid #42d8ff77;
+  border-radius: 17px;
+  background: #0e69ce33;
+  box-shadow: 0 0 28px #1ab8ff33;
+  font-size: 28px;
+}
+
+.survival-menu h2 {
+  margin: 0;
+  color: #f9fbff;
+  font-size: clamp(25px, 3vw, 35px);
+  font-weight: 800;
+}
+
+.survival-description {
+  max-width: 660px;
+  margin: 9px auto 24px;
+  color: #c4dbff;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.survival-difficulty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin: 0 auto 24px;
+}
+
+.survival-difficulty {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 20px;
+  border: 2px solid #8ab8ff38;
+  border-radius: 23px;
+  color: #f7f9ff;
+  text-align: left;
+  font-family: inherit;
+  background: #071a46d9;
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.survival-difficulty:hover,
+.survival-difficulty.survival-selected {
+  transform: translateY(-4px);
+}
+
+.survival-beginner {
+  border-color: #19efad99;
+  background: linear-gradient(160deg, #005f837d, #042643f2);
+}
+
+.survival-beginner.survival-selected {
+  border-color: #18efae;
+  box-shadow: 0 0 0 1px #18efae55, 0 0 28px #18efae44;
+}
+
+.survival-medium {
+  border-color: #1fb1ffb3;
+  background: linear-gradient(160deg, #083683c9, #04194bf5);
+}
+
+.survival-medium.survival-selected {
+  border-color: #22caff;
+  box-shadow: 0 0 0 2px #22caff44, 0 0 30px #22caff66;
+}
+
+.survival-hard {
+  border-color: #ff3a7699;
+  background: linear-gradient(160deg, #671343a8, #28113bf2);
+}
+
+.survival-hard.survival-selected {
+  border-color: #ff3b79;
+  box-shadow: 0 0 0 1px #ff3b7944, 0 0 28px #ff3b7955;
+}
+
+.survival-recommended {
+  position: absolute;
+  top: -12px;
+  right: 9px;
+  padding: 5px 9px;
+  border: 1px solid #ffffff55;
+  border-radius: 999px;
+  color: white;
+  background: linear-gradient(90deg, #168bff, #4055ff);
+  box-shadow: 0 4px 15px #126aff55;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.survival-difficulty-icon {
+  display: grid;
+  place-items: center;
+  align-self: center;
+  width: 67px;
+  height: 67px;
+  margin: 0 auto 10px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: #00000022;
+  font-size: 32px;
+}
+
+.survival-beginner .survival-difficulty-icon,
+.survival-beginner .survival-difficulty-name {
+  color: #41f4b5;
+}
+
+.survival-medium .survival-difficulty-icon,
+.survival-medium .survival-difficulty-name {
+  color: #35d8ff;
+}
+
+.survival-hard .survival-difficulty-icon,
+.survival-hard .survival-difficulty-name {
+  color: #ff668f;
+}
+
+.survival-difficulty-name {
+  align-self: center;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.survival-tagline {
+  align-self: center;
+  min-height: 38px;
+  margin-top: 4px;
+  color: #d7e6ff;
+  font-size: 11px;
+  text-align: center;
+}
+
+.survival-divider {
+  width: 100%;
+  height: 1px;
+  margin: 8px 0 12px;
+  background: #8bb4ff38;
+}
+
+.survival-detail {
+  display: block;
+  margin: 4px 0;
+  color: #c8dcff;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.survival-beginner .survival-detail { color: #77f5cd; }
+.survival-medium .survival-detail { color: #69ddff; }
+.survival-hard .survival-detail { color: #ff8eac; }
+
+.survival-start {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 260px;
+  padding: 15px 30px;
+  border: 2px solid #72eaff;
+  border-radius: 999px;
+  color: white;
+  background: linear-gradient(110deg, #5364ff, #5835ef 55%, #3b54f6);
+  box-shadow: 0 0 25px #3e6fff66, inset 0 1px #ffffff55;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.survival-start:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 35px #3e6fff99;
+}
+
+.survival-footer-note,
+.survival-bottom-note {
+  color: #9dbdff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.survival-footer-note { margin: 17px 0 0; }
+
+.survival-live-game {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 480px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 22px;
+  text-align: center;
+}
+
+.survival-label {
+  margin: 0 0 18px;
+  color: #60ddff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.survival-word {
+  margin: 0 0 30px;
+  color: #ffffff;
+  font-size: clamp(38px, 7vw, 68px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  overflow-wrap: anywhere;
+  text-shadow: 0 0 15px #20d4ff, 0 0 35px #237dff99;
+  animation: survival-word-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes survival-word-glow {
+  from { text-shadow: 0 0 12px #20d4ff, 0 0 24px #237dff66; }
+  to { text-shadow: 0 0 20px #20d4ff, 0 0 45px #237dffcc; }
+}
+
+.survival-live-game input {
+  width: min(100%, 620px);
+  padding: 16px 20px;
+  border: 1px solid #4bb5ff88;
+  border-radius: 15px;
+  outline: none;
+  color: #fff;
+  background: #041236e8;
+  box-shadow: 0 0 25px #268fff18;
+  font: inherit;
+  font-size: 16px;
+  text-align: center;
+}
+
+.survival-live-game input:focus {
+  border-color: #24d8ff;
+  box-shadow: 0 0 0 3px #24d8ff22, 0 0 25px #24d8ff22;
+}
+
+.survival-live-game input::placeholder { color: #829ac4; }
+
+.survival-hint {
+  max-width: 580px;
+  margin: 14px auto 0;
+  color: #a9c5ef;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.survival-bottom-note {
+  margin: 16px auto 0;
+}
+
+@media (max-width: 760px) {
+  .survival-page { padding: 18px 12px 28px; }
+  .survival-header { margin-bottom: 22px; }
+  .survival-brand { font-size: 11px; }
+  .survival-back { padding: 9px 12px; font-size: 12px; }
+
+  .survival-intro h1 {
+    font-size: clamp(34px, 9vw, 48px);
+    letter-spacing: -1.5px;
+  }
+
+  .survival-subtitle { font-size: 12px; }
+  .survival-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .survival-stat { padding: 10px 12px; }
+  .survival-arena { min-height: 690px; }
+
+  .survival-overlay {
+    align-items: start;
+    padding: 25px 12px 20px;
+  }
+
+  .survival-difficulty-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    max-width: 420px;
+  }
+
+  .survival-difficulty {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    align-items: center;
+    column-gap: 13px;
+    padding: 15px;
+  }
+
+  .survival-difficulty-icon {
+    grid-row: span 2;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    font-size: 25px;
+  }
+
+  .survival-difficulty-name {
+    justify-self: start;
+    align-self: end;
+    font-size: 19px;
+  }
+
+  .survival-tagline {
+    grid-column: 2;
+    justify-self: start;
+    min-height: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .survival-divider { grid-column: 1 / -1; margin: 10px 0 7px; }
+  .survival-detail { grid-column: 1 / -1; margin: 2px 0; }
+  .survival-recommended { font-size: 9px; }
+
+  .survival-start {
+    min-width: 220px;
+    padding: 13px 22px;
+  }
+
+  .survival-live-game { min-height: 500px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .survival-page *,
+  .survival-page *::before,
+  .survival-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
